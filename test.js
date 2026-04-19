@@ -104,6 +104,13 @@ async function runDemo() {
 
     } catch (error) {
         console.log(error);
+
+        console.log("test 123");
+        console.log("test 123");
+        console.log("test 123");
+        console.log("test 123");
+        console.log("test 123");
+        console.log("test 123");
     }
 }
 
