@@ -87,6 +87,10 @@ async function runDemo() {
         cart.addItem(phone);
         cart.addItem(shirt);
 
+        //        In ra detail product
+        console.log(laptop.getDetails());
+        console.log(shirt.getDetails());
+
         // Hiển thị giỏ hàng
         cart.showCart();
 
