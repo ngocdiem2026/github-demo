@@ -32,9 +32,7 @@ class Clothing extends Product {
     }
 
     getDetails() {
-        console.log(
-            `Clothing: ${this.name}, Price: ${this.price}, Size: ${this.size}`,
-        );
+        console.log(`${super.getDetails()}, Size: ${this.size}`);
     }
 }
 
