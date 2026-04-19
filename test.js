@@ -18,7 +18,9 @@ class Electronics extends Product {
     }
 
     getDetails() {
-        console.log(`Electronics: ${this.name}, Price: ${this.price}, Warranty: ${this.warranty} months`);
+        console.log(
+            `Electronics: ${this.name}, Price: ${this.price}, Warranty: ${this.warranty} months`,
+        );
     }
 }
 
@@ -30,7 +32,9 @@ class Clothing extends Product {
     }
 
     getDetails() {
-        console.log(`Clothing: ${this.name}, Price: ${this.price}, Size: ${this.size}`);
+        console.log(
+            `Clothing: ${this.name}, Price: ${this.price}, Size: ${this.size}`,
+        );
     }
 }
 
@@ -43,7 +47,7 @@ class ShoppingCart {
             return;
         }
         if (product.name === "") {
-            console.log('Product name is required.');
+            console.log("Product name is required.");
             return;
         }
         this.#items.push(product);
@@ -52,7 +56,7 @@ class ShoppingCart {
 
     showCart() {
         console.log("=== Cart Items ===");
-        this.#items.forEach(item => item.getDetails());
+        this.#items.forEach((item) => item.getDetails());
     }
 
     calculateTotal() {
@@ -62,15 +66,15 @@ class ShoppingCart {
 
 // Promise giả lập thanh toán
 function processPayment(totalAmount) {
-    return new Promise((resolve, reject) => {
+    return new ((resolve, reject) => {
         setTimeout(() => {
-            if (totalAmount > 0) {
+            if (totalAmount > 1000) {
                 resolve("Thanh toán thành công");
             } else {
                 reject("Giỏ hàng trống, không thể thanh toán");
             }
         }, 2000);
-    });
+    })();
 }
 
 // ✅ Hàm async để chạy demo
@@ -87,9 +91,7 @@ async function runDemo() {
         cart.addItem(phone);
         cart.addItem(shirt);
 
-        //        In ra detail product
-        console.log(laptop.getDetails());
-        console.log(shirt.getDetails());
+        nsole.log(shirt.getDetails());
 
         // Hiển thị giỏ hàng
         cart.showCart();
@@ -101,9 +103,6 @@ async function runDemo() {
         // Thanh toán (await thay cho .then)
         const message = await processPayment(total);
         console.log(message);
-
-    } catch (error) {
-        console.log(error);
 
         console.log("test 123");
         console.log("test 123");
