@@ -37,10 +37,18 @@ class Clothing extends Product {
 // ShoppingCart
 class ShoppingCart {
     #items = [];
-
     addItem(product) {
+        if (!(product instanceof Product)) {
+            console.log(`Invalid product.`.bgRed);
+            return;
+        }
+        if (product.name === "") {
+            console.log('Product name is required.');
+            return;
+        }
         this.#items.push(product);
     }
+    // hong biet valida thi lam cach nao.
 
     showCart() {
         console.log("=== Cart Items ===");
