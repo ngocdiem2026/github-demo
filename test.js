@@ -18,7 +18,7 @@ class Electronics extends Product {
     }
 
     getDetails() {
-        console.log(`Electronics: ${this.name}, Price: ${this.price}, Warranty: ${this.warranty} months`);
+        console.log(`${super.getDetails()}, Warranty: ${this.warranty} months`);
     }
 }
 
@@ -30,7 +30,7 @@ class Clothing extends Product {
     }
 
     getDetails() {
-        console.log(`Clothing: ${this.name}, Price: ${this.price}, Size: ${this.size}`);
+        console.log(`${super.getDetails()}, Size: ${this.size}`);
     }
 }
 
